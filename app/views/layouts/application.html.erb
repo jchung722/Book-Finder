@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BookFinder</title>
+    <title>Bookworm</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,9 @@
   </head>
 
   <body>
+    <header>
+      <h1 id="title"><%= link_to "Bookworm", root_path %></h1>
+    </header>
     <%= yield %>
   </body>
 </html>
