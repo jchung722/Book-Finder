@@ -4,7 +4,7 @@ class Book
   def initialize(title, authors, publisher, image, link)
 
     @title = title
-    @author = author
+    @authors = authors
     @publisher = publisher
     @image = image
     @link = link

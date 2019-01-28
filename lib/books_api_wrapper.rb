@@ -6,7 +6,7 @@ class BooksApiWrapper
   TOKEN = ENV["KEY"]
 
   def self.search(query)
-    url = BASE_URL + "&q=#{query}"
+    url = BASE_URL + "?q=#{query}"
     response = HTTParty.get(url)
     books = []
 
