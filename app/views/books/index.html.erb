@@ -1,0 +1,7 @@
+<div id="search_box">
+  <%= form_tag(root_path, method: "get") do %>
+    <!-- <%= label_tag(:q, "Search for:") %> -->
+    <%= text_field_tag(:q, nil, placeholder:"search for your book!")%>
+    <%= submit_tag("Search", name: nil, class:"success button") %>
+  <% end %>
+</div>
