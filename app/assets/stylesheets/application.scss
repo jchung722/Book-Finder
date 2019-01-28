@@ -13,10 +13,46 @@
  */
  @import "bootstrap";
 
- header{
-   padding: 1% 1% 1% 1%;
+/********* Banner Section ************/
+
+.jumbotron {
+   text-align: center;
    font-family: 'PT Sans', sans-serif;
-   background-image: url("https://media.npr.org/assets/img/2018/11/18/gettyimages-865109088-170667a_wide-f4e3c4a58ad5e1268dec3654c0b2d490e320bba6-s1600-c85.jpg");
-   background-repeat: no-repeat;
-   background-size: 100% 100%;
+   background: url("https://cdn.aarp.net/content/dam/aarp/money/budgeting_savings/2016/04/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg") no-repeat center;
+   background-size: cover;
+   min-width: 600px;
+ }
+
+ .jumbotron h1 a {
+   color: white;
+   font-family: 'Kalam', cursive;
+ }
+
+ /********** Main Body/Book List ***********/
+
+ .book {
+   border: grey solid 1px;
+   border-radius: 10px;
+   margin: 1% 15%;
+   // height: 150px;
+   min-width: 400px;
+ }
+
+ .book_image {
+   height: 100%;
+   padding: 10px;
+   vertical-align: top;
+ }
+
+ .book_info {
+   display: inline-block;
+   color: black;
+ }
+
+ a:hover {
+   text-decoration: none;
+ }
+
+ .bold {
+   font-weight: bold;
  }

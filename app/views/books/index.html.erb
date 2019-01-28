@@ -2,13 +2,21 @@
 <div>
   <% if @data %>
       <% @data.each do |book| %>
-          <a href="<%=book.link%>" target=_blank><img src="<%= book.image %>" class="thumbnail"/></a>
-          <p>Title: <%= book.title %></p>
-          <p>Authors: <% book.authors.each do |author| %>
-                <p><%= author %></p>
-              <% end %>
-          </p>
-          <p>Publisher: <%= book.publisher %></p>
+          <a href="<%=book.link%>" target=_blank>
+            <div class="book">
+              <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
+              <div class="book_info">
+                <h3><%= book.title %></h3>
+                <p>
+                  <span class="bold">Author(s):</span>
+                  <% book.authors.each do |author| %>
+                    <p><%= author %></p>
+                  <% end %>
+                </p>
+                <p><span class="bold">Publisher:</span> <%= book.publisher %></p>
+              </div>
+            </div>
+          </a>
       <% end %>
   <% end %>
 </div>
