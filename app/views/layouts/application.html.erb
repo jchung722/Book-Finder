@@ -12,6 +12,12 @@
   <body>
     <header>
       <h1 id="title"><%= link_to "Bookworm", root_path %></h1>
+      <div id="search_box">
+        <%= form_tag(root_path, method: "get") do %>
+          <%= text_field_tag(:q, nil, placeholder:"search for your book!")%>
+          <%= submit_tag("Search", name: nil, class:"success button") %>
+        <% end %>
+      </div>
     </header>
     <%= yield %>
   </body>
