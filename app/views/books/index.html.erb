@@ -9,12 +9,12 @@
   <% if @data %>
       <% @data.each do |book| %>
           <a href="<%=book.link%>" target=_blank><img src="<%= book.image %>" class="thumbnail"/></a>
-          <p><%= book.title %></p>
-          <p><% book.authors.each do |author| %>
+          <p>Title: <%= book.title %></p>
+          <p>Authors: <% book.authors.each do |author| %>
                 <p><%= author %></p>
               <% end %>
           </p>
-          <p><%= book.publisher %></p>
+          <p>Publisher <%= book.publisher %></p>
       <% end %>
   <% end %>
 </div>
