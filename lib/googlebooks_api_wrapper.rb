@@ -13,12 +13,12 @@ class BooksApiWrapper
     if response["items"]
       response["items"].each do |item|
         title = item["volumeInfo"]["title"]
-        author = item["volumeInfo"]["authors"]
+        authors = item["volumeInfo"]["authors"]
         publisher = item["volumeInfo"]["publisher"]
         image = item["volumeInfo"]["imageLinks"]["thumbnail"]
         link = item["volumeInfo"]["infoLink"]
 
-        books << Book.new(title, author, publisher, image, link)
+        books << Book.new(title, authors, publisher, image, link)
     end
     else
       return nil
