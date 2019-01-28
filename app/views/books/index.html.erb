@@ -1,7 +1,20 @@
 <div id="search_box">
   <%= form_tag(root_path, method: "get") do %>
-    <!-- <%= label_tag(:q, "Search for:") %> -->
     <%= text_field_tag(:q, nil, placeholder:"search for your book!")%>
     <%= submit_tag("Search", name: nil, class:"success button") %>
+  <% end %>
+</div>
+
+<div>
+  <% if @data %>
+      <% @data.each do |book| %>
+          <a href="<%=book.link%>" target=_blank><img src="<%= book.image %>" class="thumbnail"/></a>
+          <p><%= book.title %></p>
+          <p><% book.authors.each do |author| %>
+                <p><%= author %></p>
+              <% end %>
+          </p>
+          <p><%= book.publisher %></p>
+      <% end %>
   <% end %>
 </div>
