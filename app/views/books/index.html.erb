@@ -7,15 +7,13 @@
               <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
               <div class="book_info">
                 <h3><%= book.title %></h3>
-                <p>
+                <p class="authors">
                   <span class="bold">Author(s):</span>
-                  <div class="authors">
                     <% if book.authors %>
                       <% book.authors.each do |author| %>
-                        <p><%= author %></p>
+                        <p class="author"><%= author %></p>
                       <% end %>
                     <% end %>
-                  </div>
                 </p>
                 <p><span class="bold">Publisher:</span> <%= book.publisher %></p>
               </div>

@@ -38,9 +38,9 @@ input {
 
 /********** Main Body/Book List ***********/
 
-// body {
-//   background: url("https://previews.123rf.com/images/teploleta/teploleta1508/teploleta150800015/44220909-seamless-pattern-with-hand-drawn-books-.jpg") repeat;
-// }
+body {
+  background-color: rgb(220,220,220);
+}
 
 .list {
   min-height: 450px;
@@ -50,7 +50,6 @@ input {
   border: grey solid 1px;
   border-radius: 10px;
   margin: 1% 15%;
-  // height: 150px;
   min-width: 400px;
   background-color: rgb(255,255,255);
 }
@@ -71,9 +70,13 @@ input {
   max-width: 500px;
 }
 
-// .authors {
-//   display: inline;
-// }
+.authors {
+  margin-bottom: 0;
+}
+
+.author {
+  margin-bottom: 0;
+}
 
 a:hover {
   text-decoration: none;
