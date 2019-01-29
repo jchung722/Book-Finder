@@ -16,43 +16,75 @@
 /********* Banner Section ************/
 
 .jumbotron {
-   text-align: center;
-   font-family: 'PT Sans', sans-serif;
-   background: url("https://cdn.aarp.net/content/dam/aarp/money/budgeting_savings/2016/04/1140-yeager-sell-your-used-books.imgcache.rev6feda141288df73e8fd100822bb375ea.jpg") no-repeat center;
-   background-size: cover;
-   min-width: 600px;
- }
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  background: url("http://cohoctonlibrary.org/wp-content/uploads/2014/06/cropped-book-background.jpg") no-repeat center;
+  background-size: cover;
+  min-width: 600px;
+}
 
- .jumbotron h1 a {
-   color: white;
-   font-family: 'Kalam', cursive;
- }
+.jumbotron h1 a {
+  color: white;
+  font-family: 'Pacifico', cursive;
+}
 
- /********** Main Body/Book List ***********/
+.header-image {
+  width: 50px;
+}
 
- .book {
-   border: grey solid 1px;
-   border-radius: 10px;
-   margin: 1% 15%;
-   // height: 150px;
-   min-width: 400px;
- }
+input {
+  min-width: 250px;
+}
 
- .book_image {
-   height: 100%;
-   padding: 10px;
-   vertical-align: top;
- }
+/********** Main Body/Book List ***********/
 
- .book_info {
-   display: inline-block;
-   color: black;
- }
+// body {
+//   background: url("https://previews.123rf.com/images/teploleta/teploleta1508/teploleta150800015/44220909-seamless-pattern-with-hand-drawn-books-.jpg") repeat;
+// }
 
- a:hover {
-   text-decoration: none;
- }
+.list {
+  min-height: 450px;
+}
 
- .bold {
-   font-weight: bold;
- }
+.book {
+  border: grey solid 1px;
+  border-radius: 10px;
+  margin: 1% 15%;
+  // height: 150px;
+  min-width: 400px;
+  background-color: rgb(255,255,255);
+}
+
+.book:hover {
+  background-color: rgba(255,255,225,.8);
+}
+
+.book_image {
+  height: 100%;
+  padding: 10px;
+  vertical-align: top;
+}
+
+.book_info {
+  display: inline-block;
+  color: black;
+  max-width: 500px;
+}
+
+// .authors {
+//   display: inline;
+// }
+
+a:hover {
+  text-decoration: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/**************** Footer **************/
+
+footer {
+  text-align: center;
+}

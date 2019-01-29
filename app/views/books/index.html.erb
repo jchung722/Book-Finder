@@ -1,5 +1,5 @@
 
-<div>
+<div class="list">
   <% if @data %>
       <% @data.each do |book| %>
           <a href="<%=book.link%>" target=_blank>
@@ -9,9 +9,13 @@
                 <h3><%= book.title %></h3>
                 <p>
                   <span class="bold">Author(s):</span>
-                  <% book.authors.each do |author| %>
-                    <p><%= author %></p>
-                  <% end %>
+                  <div class="authors">
+                    <% if book.authors %>
+                      <% book.authors.each do |author| %>
+                        <p><%= author %></p>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </p>
                 <p><span class="bold">Publisher:</span> <%= book.publisher %></p>
               </div>
