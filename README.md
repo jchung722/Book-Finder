@@ -12,7 +12,8 @@ Create an application that should all you to:
 - Created API requests using HTTParty gem
 - Consumed JSON responses from the API
 - Mapped response to application-specific data by creating Book objects
+- Added appropriate structure/styling for usability of the application (HTML/CSS/Bootstrap)
 - Added appropriate unit tests for the controller, API wrapper, and class object created
 
 ## Future Add-ons:
-- Add feature to allow for navigation to book information on a page within the application
+- Add feature to allow for navigation to book information on a page within the application.
