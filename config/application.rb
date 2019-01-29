@@ -16,5 +16,9 @@ module BookFinder
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.eager_load_paths << Rails.root.join('lib')
+    # config/application.rb
+    config.generators do |g|
+      g.test_framework :minitest, spec: true
+    end
   end
 end
