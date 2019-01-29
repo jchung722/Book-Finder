@@ -5,8 +5,8 @@ class BooksApiWrapper
   BASE_URL = "https://www.googleapis.com/books/v1/volumes"
   TOKEN = ENV["KEY"]
 
-  def self.search(query)
-    url = BASE_URL + "?q=#{query}"
+  def self.search(query, search)
+    url = BASE_URL + "?q=#{search}#{query}"
     response = HTTParty.get(url)
     books = []
 

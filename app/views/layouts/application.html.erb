@@ -17,6 +17,7 @@
       <img class="header-image" src="http://worldartsme.com/images/cute-bookworm-clipart-1.jpg" alt="bookworm"/>
       <div class="search_box">
         <%= form_tag(root_path, method: "get") do %>
+          <%= select_tag(:search, options_for_select([["keyword",""], ["title", "intitle:"], ["author", "inauthor:"], ["publisher", "inpublisher:"], ["subject", "subject:"], ["isbn", "isbn:"], ["lccn", "lccn:"], ["oclc", "oclc:"]])) %>
           <%= text_field_tag(:q, nil, placeholder:"What can I help you find today?")%>
           <%= submit_tag("Search", name: nil, class:"success button") %>
         <% end %>
