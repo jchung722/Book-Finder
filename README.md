@@ -16,4 +16,4 @@ Create an application that should all you to:
 - Added appropriate unit tests for the controller, API wrapper, and class object created
 
 ## Future Add-ons:
-- Add feature to allow for navigation to book information on a page within the application.
+- Add feature to allow for navigation to book information on a page within the application -- will need to update consumption of JSON responses to map responses to book description, publisher date, page count etc.

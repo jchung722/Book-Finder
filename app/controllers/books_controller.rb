@@ -5,6 +5,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def show
-  end
+  # for future page navigating to book information
+  # def show
+  # end
 end
