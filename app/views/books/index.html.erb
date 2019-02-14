@@ -21,7 +21,7 @@
       <div class="search_box">
         <%= form_tag(root_path, method: "get") do %>
           <%= select_tag(:search, options_for_select([["keyword",""], ["title", "intitle:"], ["author", "inauthor:"], ["publisher", "inpublisher:"], ["subject", "subject:"], ["isbn", "isbn:"], ["lccn", "lccn:"], ["oclc", "oclc:"]])) %>
-          <%= text_field_tag :q, params[:q], pattern: "^[a-zA-Z0-9 ]*$", placeholder:"What can I help you find today?", required: true %>
+          <%= text_field_tag :q, params[:q], pattern: "^[a-zA-Z0-9. ]*$", placeholder:"What can I help you find today?", required: true %>
           <%= submit_tag("Search", name: nil, class:"success button") %>
         <% end %>
         <small id="emailHelp" class="form-text text-light">Do not use special characters (i.e. !@#$)</small>
