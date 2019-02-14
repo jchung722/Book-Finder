@@ -24,6 +24,7 @@
           <%= text_field_tag :q, params[:q], pattern: "^[a-zA-Z0-9 ]*$", placeholder:"What can I help you find today?", required: true %>
           <%= submit_tag("Search", name: nil, class:"success button") %>
         <% end %>
+        <small id="emailHelp" class="form-text text-light">Do not use special characters (i.e. !@#$)</small>
       </div>
     </header>
 
