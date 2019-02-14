@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <title>Bookworm</title>
     <%= csrf_meta_tags %>
@@ -12,6 +13,8 @@
   </head>
 
   <body>
+
+    <!-- Banner & Search Form -->
     <header class="jumbotron">
       <h1 class="title display-4"><%= link_to "Bookworm", root_path %></h1>
       <img class="header-image" src="http://worldartsme.com/images/cute-bookworm-clipart-1.jpg" alt="bookworm"/>
@@ -23,7 +26,9 @@
         <% end %>
       </div>
     </header>
+
     <div class="list">
+      <!-- Search Results -->
       <% if @data %>
           <% @data.each do |book| %>
               <a href="<%=book.link%>" target=_blank>
@@ -39,7 +44,7 @@
                     <% else %>
                       <h3 class="unknown">Unknown</h3>
                     <% end %>
-                    <p class="authors">
+                    <div class="authors">
                       <span class="bold">Author(s):</span>
                         <% if book.authors %>
                           <% book.authors.each do |author| %>
@@ -48,7 +53,7 @@
                         <% else %>
                           <p class="unknown">Unknown</p>
                         <% end %>
-                    </p>
+                    </div>
                     <p>
                       <span class="bold">Publisher:</span>
                       <% if book.publisher %>
@@ -61,15 +66,21 @@
                 </div>
               </a>
           <% end %>
+
+      <!-- placeholder image of there are no search results  -->
       <% else %>
           <div class="search_placeholder">
             <img src="https://pngimage.net/wp-content/uploads/2018/05/books-cartoon-png-1.png" class="placeholder_image" alt="bookstack"/>
             <p>No Results</p>
           </div>
       <% end %>
+
     </div>
+
     <footer>
       <p id="copyright">&copy Jessica Chung 2019</p>
     </footer>
+
   </body>
+
 </html>

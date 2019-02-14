@@ -55,9 +55,12 @@ body {
   margin: 75px auto 0 auto;
   border-radius: 50%;
   background-color: rgb(255,255,255);
-  color: rgb(128,128,128);
   opacity: 0.7;
   text-align: center;
+}
+
+.unknown, .search_placeholder {
+  color: rgb(128,128,128);
 }
 
 .list {
@@ -73,7 +76,7 @@ body {
 }
 
 .book:hover {
-  background-color: rgba(255,255,225,.8);
+  background-color: rgb(255,255,225);
 }
 
 .book_image {
@@ -95,15 +98,11 @@ p.unknown.book_image {
 }
 
 .authors {
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 .author {
   margin-bottom: 0;
-}
-
-.unknown {
-  color: rgb(128,128,128);
 }
 
 a:hover {
