@@ -1,7 +1,7 @@
 class Book
   attr_reader :title, :authors, :publisher, :image, :link
 
-  def initialize(title, authors, publisher, image, link)
+  def initialize(title, authors, publisher, image=nil, link)
 
     @title = title
     @authors = authors

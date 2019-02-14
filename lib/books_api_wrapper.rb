@@ -15,8 +15,10 @@ class BooksApiWrapper
         title = item["volumeInfo"]["title"]
         authors = item["volumeInfo"]["authors"]
         publisher = item["volumeInfo"]["publisher"]
-        image = item["volumeInfo"]["imageLinks"]["thumbnail"]
         link = item["volumeInfo"]["infoLink"]
+        if item["volumeInfo"]["imageLinks"]
+          image = item["volumeInfo"]["imageLinks"]["thumbnail"]
+        end
 
         books << Book.new(title, authors, publisher, image, link)
     end
