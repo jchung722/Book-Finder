@@ -4,18 +4,35 @@
       <% @data.each do |book| %>
           <a href="<%=book.link%>" target=_blank>
             <div class="book">
-              <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
+              <% if book.image %>
+                <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
+              <% else %>
+                <p class="unknown book_image"> No Image </p>
+              <% end %>
               <div class="book_info">
-                <h3><%= book.title %></h3>
+                <% if book.title %>
+                  <h3><%= book.title %></h3>
+                <% else %>
+                  <h3 class="unknown">Unknown</h3>
+                <% end %>
                 <p class="authors">
                   <span class="bold">Author(s):</span>
                     <% if book.authors %>
                       <% book.authors.each do |author| %>
                         <p class="author"><%= author %></p>
                       <% end %>
+                    <% else %>
+                      <p class="unknown">Unknown</p>
                     <% end %>
                 </p>
-                <p><span class="bold">Publisher:</span> <%= book.publisher %></p>
+                <p>
+                  <span class="bold">Publisher:</span>
+                  <% if book.publisher %>
+                    <%= book.publisher %>
+                  <% else %>
+                    <span class="unknown">Unknown</span>
+                  <% end %>
+                </p>
               </div>
             </div>
           </a>

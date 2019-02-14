@@ -77,9 +77,15 @@ body {
 }
 
 .book_image {
-  height: 100%;
+  width: 148px;
   padding: 10px;
   vertical-align: top;
+}
+
+p.unknown.book_image {
+  text-align: center;
+  display: inline-block;
+  margin: 75px 0;
 }
 
 .book_info {
@@ -94,6 +100,10 @@ body {
 
 .author {
   margin-bottom: 0;
+}
+
+.unknown {
+  color: rgb(128,128,128);
 }
 
 a:hover {
