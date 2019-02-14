@@ -1,7 +1,5 @@
 # Book-Finder
 
-deployed at: http://mybookworm.herokuapp.com/
-
 ## Goals:
 Create an application that should all you to:  
 - Type in a query and display a list of books matching that query.
@@ -16,6 +14,13 @@ Create an application that should all you to:
 - Mapped response to application-specific data by creating Book objects
 - Added appropriate structure/styling for usability of the application (HTML/CSS/Bootstrap)
 - Added appropriate unit tests for the controller, API wrapper, and class object created
+
+## Set Up
+
+## Testing
+
+## Deployment
+deployed at: http://mybookworm.herokuapp.com/
 
 ## Future Add-ons:
 - Add feature to allow for navigation to book information on a page within the application -- will need to update consumption of JSON responses to map responses to book description, publisher date, page count etc.
