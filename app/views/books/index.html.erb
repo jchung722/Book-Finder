@@ -1,46 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookworm</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<div class="list">
-  <% if @data %>
-      <% @data.each do |book| %>
-          <a href="<%=book.link%>" target=_blank>
-            <div class="book">
-              <% if book.image %>
-                <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
-              <% else %>
-                <p class="unknown book_image"> No Image </p>
-              <% end %>
-              <div class="book_info">
-                <% if book.title %>
-                  <h3><%= book.title %></h3>
-                <% else %>
-                  <h3 class="unknown">Unknown</h3>
-                <% end %>
-                <p class="authors">
-                  <span class="bold">Author(s):</span>
-                    <% if book.authors %>
-                      <% book.authors.each do |author| %>
-                        <p class="author"><%= author %></p>
-                      <% end %>
-                    <% else %>
-                      <p class="unknown">Unknown</p>
-                    <% end %>
-                </p>
-                <p>
-                  <span class="bold">Publisher:</span>
-                  <% if book.publisher %>
-                    <%= book.publisher %>
-                  <% else %>
-                    <span class="unknown">Unknown</span>
-                  <% end %>
-                </p>
-              </div>
-            </div>
-          </a>
-      <% end %>
-  <% else %>
-      <div class="search_placeholder">
-        <img src="https://pngimage.net/wp-content/uploads/2018/05/books-cartoon-png-1.png" class="placeholder_image" alt="bookstack"/>
-        <p>No Results</p>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon-32x32.png') %>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  </head>
+
+  <body>
+    <header class="jumbotron">
+      <h1 class="title display-4"><%= link_to "Bookworm", root_path %></h1>
+      <img class="header-image" src="http://worldartsme.com/images/cute-bookworm-clipart-1.jpg" alt="bookworm"/>
+      <div class="search_box">
+        <%= form_tag(root_path, method: "get") do %>
+          <%= select_tag(:search, options_for_select([["keyword",""], ["title", "intitle:"], ["author", "inauthor:"], ["publisher", "inpublisher:"], ["subject", "subject:"], ["isbn", "isbn:"], ["lccn", "lccn:"], ["oclc", "oclc:"]])) %>
+          <%= text_field_tag(:q, nil, placeholder:"What can I help you find today?")%>
+          <%= submit_tag("Search", name: nil, class:"success button") %>
+        <% end %>
       </div>
-  <% end %>
-</div>
+    </header>
+    <div class="list">
+      <% if @data %>
+          <% @data.each do |book| %>
+              <a href="<%=book.link%>" target=_blank>
+                <div class="book">
+                  <% if book.image %>
+                    <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
+                  <% else %>
+                    <p class="unknown book_image"> No Image </p>
+                  <% end %>
+                  <div class="book_info">
+                    <% if book.title %>
+                      <h3><%= book.title %></h3>
+                    <% else %>
+                      <h3 class="unknown">Unknown</h3>
+                    <% end %>
+                    <p class="authors">
+                      <span class="bold">Author(s):</span>
+                        <% if book.authors %>
+                          <% book.authors.each do |author| %>
+                            <p class="author"><%= author %></p>
+                          <% end %>
+                        <% else %>
+                          <p class="unknown">Unknown</p>
+                        <% end %>
+                    </p>
+                    <p>
+                      <span class="bold">Publisher:</span>
+                      <% if book.publisher %>
+                        <%= book.publisher %>
+                      <% else %>
+                        <span class="unknown">Unknown</span>
+                      <% end %>
+                    </p>
+                  </div>
+                </div>
+              </a>
+          <% end %>
+      <% else %>
+          <div class="search_placeholder">
+            <img src="https://pngimage.net/wp-content/uploads/2018/05/books-cartoon-png-1.png" class="placeholder_image" alt="bookstack"/>
+            <p>No Results</p>
+          </div>
+      <% end %>
+    </div>
+    <footer>
+      <p id="copyright">&copy Jessica Chung 2019</p>
+    </footer>
+  </body>
+</html>
