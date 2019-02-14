@@ -27,40 +27,26 @@
       </div>
     </header>
 
+    <!-- Search Results -->
     <div class="list">
-      <!-- Search Results -->
       <% if @data %>
           <% @data.each do |book| %>
+              <!-- link to book details -->
               <a href="<%=book.link%>" target=_blank>
                 <div class="book">
-                  <% if book.image %>
-                    <img src="<%= book.image %>" class="book_image" alt="<%= book.title %> image"/>
-                  <% else %>
-                    <p class="unknown book_image"> No Image </p>
-                  <% end %>
+                  <%= book_image(book.image, book.title) %>
                   <div class="book_info">
-                    <% if book.title %>
-                      <h3><%= book.title %></h3>
-                    <% else %>
-                      <h3 class="unknown">Unknown</h3>
-                    <% end %>
+                    <!-- Title Field -->
+                    <%= book_info(book.title, "h3") %>
+                    <!-- Author Field -->
                     <div class="authors">
                       <span class="bold">Author(s):</span>
-                        <% if book.authors %>
-                          <% book.authors.each do |author| %>
-                            <p class="author"><%= author %></p>
-                          <% end %>
-                        <% else %>
-                          <p class="unknown">Unknown</p>
-                        <% end %>
+                      <%= book_authors(book.authors) %>
                     </div>
+                    <!-- Publisher Field -->
                     <p>
                       <span class="bold">Publisher:</span>
-                      <% if book.publisher %>
-                        <%= book.publisher %>
-                      <% else %>
-                        <span class="unknown">Unknown</span>
-                      <% end %>
+                      <%= book_info(book.publisher, "span") %>
                     </p>
                   </div>
                 </div>
