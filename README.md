@@ -17,10 +17,20 @@ Create an application that should all you to:
 
 ## Set Up
 
-## Testing
+        $ bundle install
+        $ rails server
+
+go to http://localhost:3000/ in the browser.
+
+To run tests:
+
+        $ rails test
 
 ## Deployment
-deployed at: http://mybookworm.herokuapp.com/
+The application is deployed on Heroku at: http://mybookworm.herokuapp.com/
+
+To Deploy take the following steps:
+        
 
 ## Future Add-ons:
 - Add feature to allow for navigation to book information on a page within the application -- will need to update consumption of JSON responses to map responses to book description, publisher date, page count etc.
