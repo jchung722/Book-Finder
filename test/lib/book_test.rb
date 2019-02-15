@@ -11,9 +11,14 @@ describe Book do
     expect(book.link).must_equal "my_link"
   end
 
-  it "must be initalized with a title, author, publisher, image, and link" do
-    book = Book.new("The Little Prince", "Antoine Saint-Exupery", "Publisher", "image", "link")
+  it "must be initialized with at least title, author, publisher, and link" do
+    book = Book.new("The Little Prince", "Antoine Saint-Exupery", "Publisher", "link")
     assert book.is_a? Book
+  end
+
+  it "must set image to nil on default if it is not initialized" do
+    book = Book.new("The Little Prince", "Antoine Saint-Exupery", "Publisher", "link")
+    assert_nil book.image
   end
 
   it "must raise an error if not initialized with enough arguments" do
@@ -21,8 +26,18 @@ describe Book do
       Book.new("The Jungle")
     end
     assert_raises ArgumentError do
-      Book.new("The Little Prince", "Antoine Saint-Exupery", "Publisher", "image")
+      Book.new("The Little Prince", "Antoine Saint-Exupery", "Publisher")
     end
+  end
+
+  it "Must create book even when initialized with empty fields" do
+    book = Book.new(nil, nil, nil, nil, nil)
+    assert_nil book.title
+    assert_nil book.authors
+    assert_nil book.publisher
+    assert_nil book.image
+    assert_nil book.link
+    assert book.is_a? Book
   end
 
 end
