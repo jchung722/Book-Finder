@@ -120,3 +120,20 @@ a:hover {
 footer {
   text-align: center;
 }
+
+/*************** Errors ***************/
+
+body.error {
+  text-align: center;
+}
+
+.error_heading {
+  margin-bottom: 150px;
+}
+
+.error_image {
+  margin-top: 150px;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+}

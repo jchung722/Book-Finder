@@ -24,6 +24,9 @@ module BookFinder
       g.test_framework :minitest, spec: true
     end
 
+    #set up to use error pages from rails app
+    config.exceptions_app = self.routes
+
     #Disable unused Rack middleware
     config.eager_load = false
     config.middleware.delete Rack::Sendfile
