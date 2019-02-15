@@ -35,21 +35,21 @@ To Deploy to heroku, take the following steps:
   1. Make a Heroku account and download Heroku command line tools at https://devcenter.heroku.com/articles/heroku-command-line.  
   2. Sign into Heroku from terminal  
 
-        $ heroku login
-        Enter your Heroku credentials.
-        Email:  YOUR-EMAIL-HERE@SOMEWHERE.NET
-        Password (Typing will be hidden):  
-        Authentication successful.
+          $ heroku login
+          Enter your Heroku credentials.
+          Email:  YOUR-EMAIL-HERE@SOMEWHERE.NET
+          Password (Typing will be hidden):  
+          Authentication successful.
 
   3. Navigate to app directory
   4. Choose an app name and create heroku app in terminal  
 
-        ~ $ cd path/to/my_rails_app
-        ~/path/to/my_rails_app $ heroku create my-new-app
+          ~ $ cd path/to/my_rails_app
+          ~/path/to/my_rails_app $ heroku create my-new-app
 
   5. Use git push to push current state of master branch to Heroku.  
 
-        ~/path/to/my_rails_app $ git push heroku master
+          ~/path/to/my_rails_app $ git push heroku master
 
   6. Open page in browser by going to link `http://my-new-app.herokuapp.com/` or `heroku open` command.
 
