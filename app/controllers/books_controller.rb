@@ -2,7 +2,7 @@ class BooksController < ApplicationController
 
   def index
     if params[:q].present?
-      @data = BooksApiWrapper.search(params[:q], params[:search])
+      @data = BooksApiWrapper.search(params[:q], params[:search], GoogleBooks)
     end
   end
 
