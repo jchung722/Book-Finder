@@ -17,12 +17,14 @@ Create an application that should all you to:
 
 ## Set Up
 
+After cloning repository and navigating to directory, run the following code in terminal:
+
         $ bundle install
         $ rails server
 
-go to http://localhost:3000/ in the browser.
+go to http://localhost:3000/ in the browser to open the application.
 
-To run tests:
+To run tests run the following code in the terminal:
 
         $ rails test
 
@@ -48,7 +50,7 @@ To Deploy to heroku, take the following steps:
   5. Use git push to push current state of master branch to Heroku.  
 
         ~/path/to/my_rails_app $ git push heroku master
-        
+
   6. Open page in browser by going to link `http://my-new-app.herokuapp.com/` or `heroku open` command.
 
 
