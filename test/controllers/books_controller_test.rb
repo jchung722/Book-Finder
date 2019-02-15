@@ -4,11 +4,23 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   test "should get index/homepage" do
     get "/"
     assert_response :success
-    assert_template :index
   end
 
-  test "navigating to other page will result in error" do
-    get "/home"
-    refute_response :success
+  test "should properly render with search results" do
+    VCR.use_cassette("books") do
+      google_books_data = BooksApiWrapper.new(GoogleBooks)
+      @data = google_books_data.search("harry", "")
+
+      get "/"
+      assert_response :success
+    end
   end
+
+  test "going to wrong homepage will raise error" do
+    assert_raises ActionController::RoutingError do
+      get "/home"
+    end
+  end
+
+
 end
